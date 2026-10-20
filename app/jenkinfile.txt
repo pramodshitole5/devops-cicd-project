@@ -1,0 +1,26 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checkout stage started'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building DevOps application'
+                sh 'ls -la'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing project files'
+                sh 'test -f dockerfile'
+            }
+        }
+    }
+}
